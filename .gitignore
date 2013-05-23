@@ -1,0 +1,10 @@
+.*.s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+components
+build
+
+.c9revisions
