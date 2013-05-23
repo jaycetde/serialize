@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<form id="form">
+    <input type="text" name="textInput" value="text input" />
+    <input type="password" name="passwordInput" value="password input" />
+    <input type="checkbox" name="checkbox1" />
+    <input type="checkbox" name="checkbox2" checked="checked" />
+    <input type="radio" name="radiogroup" value="first" />
+    <input type="radio" name="radiogroup" value="second" />
+    <input type="button" name="button" value="A button" />
+    <select name="select">
+        <option value="first">First</option>
+        <option value="second">Second</option>
+    </select>
+    <textarea name="textarea">Text area content</textarea>
+    <input type="submit" value="Serialize" />
+</form>
+
+<script src="build/build.js"></script>
+<script>
+
+var serialize = require('serialize')
+  , form = document.querySelector('#form')
+;
+
+form.onsubmit = function (e) {
+
+    console.log(serialize(form));
+
+    e.returnValue = false;
+    e.preventDefault();
+
+};
+
+</script>
+
+</body>
+</html>

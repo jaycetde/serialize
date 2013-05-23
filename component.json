@@ -4,7 +4,9 @@
   "description": "Serialize forms into JSON object",
   "version": "0.0.1",
   "keywords": [],
-  "dependencies": {},
+  "dependencies": {
+    "component/value": "*"
+  },
   "development": {},
   "license": "MIT",
   "main": "index.js",

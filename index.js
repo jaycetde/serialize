@@ -1,18 +1,23 @@
 'use strict';
 
-var submittableRegExp = /^(?:input|select|textarea|keygen)/i
+var value = require('value')
+  , submittableRegExp = /^(?:input|select|textarea|keygen)/i
   , ignoredTypesRegExp = /^(?:submit|button|image|reset|file)$/i
 ;
 
 module.exports = function (form) {
-    var elements = form.elements
+    var els = form.elements
       , i = 0
-      , l = elements.length
+      , l = els.length
+      , el
       , ret = {}
     ;
     while (i < l) {
-        if (!elements[i].disabled && submittableRegExp.text(elements[i].nodeName) && !ignoredTypesRegExp.text(elements[i].type)) {
-            ret[elements[i].name] = typeof(elements[i].checked) !== 'undefined' ? elements[i].checked : elements[i].value;
+        el = els[i];
+        if (!el.disabled && submittableRegExp.test(el.nodeName) && !ignoredTypesRegExp.test(el.type)) {
+            if (el.type.toLowerCase() !== 'radio' || el.checked) {
+                ret[el.name] = value(el);
+            }
         }
         i += 1;
     }
