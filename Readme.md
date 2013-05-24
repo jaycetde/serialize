@@ -11,8 +11,8 @@
 
 ```html
 <form id="form">
-    <input type="text" name="username" />
-    <input type="password" name="password" />
+    <input type="text" name="username" value="USERNAME" />
+    <input type="password" name="password" value="PASSWORD" />
     <input type="submit" />
 </form>
 ```
