@@ -2,7 +2,7 @@
   "name": "serialize",
   "repo": "JayceTDE/serialize",
   "description": "Serialize forms into JSON object",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": [],
   "dependencies": {
     "component/value": "*"
