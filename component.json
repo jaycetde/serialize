@@ -5,7 +5,8 @@
   "version": "0.0.2",
   "keywords": [],
   "dependencies": {
-    "component/value": "*"
+    "component/value": "*",
+    "eivindfjeldstad/dot": "*"
   },
   "development": {},
   "license": "MIT",
