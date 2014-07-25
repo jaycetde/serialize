@@ -1,6 +1,7 @@
 'use strict';
 
-var value = require('value')
+var dot = require('dot')
+  , value = require('value')
   , submittableRegExp = /^(?:input|select|textarea|keygen)/i
   , ignoredTypesRegExp = /^(?:submit|button|image|reset|file)$/i
 ;
@@ -16,7 +17,7 @@ module.exports = function (form) {
         el = els[i];
         if (!el.disabled && submittableRegExp.test(el.nodeName) && !ignoredTypesRegExp.test(el.type)) {
             if (el.type.toLowerCase() !== 'radio' || el.checked) {
-                ret[el.name] = value(el);
+                dot.set(ret, el.name, value(el));
             }
         }
         i += 1;
