@@ -20,6 +20,9 @@
     <input type="password" name="password" value="PASSWORD" />
     <input type="text" name="birth.month" value="JANUARY" />
     <input type="text" name="birth.year" value="1980" />
+    <input type="hidden" name="multiple" value="a" />
+    <input type="hidden" name="multiple" value="b" />
+    <input type="hidden" name="multiple" value="c" />
     <input type="submit" />
 </form>
 ```
@@ -37,7 +40,8 @@ serialize(form);
   birth: {
     month: "JANUARY",
     year: "1980"
-  }
+  },
+  multiple: ['a', 'b', 'c']
 }
 */
 ```
